@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 
-const WEB3FORMS_KEY = "07ce4d77-f1bb-4f59-9ff7-0397cf5ca460"; // ← paste your Web3Forms key here
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
 
 export default function Contact() {
   const { t } = useLang();
