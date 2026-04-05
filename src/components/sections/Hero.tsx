@@ -103,17 +103,24 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-headline font-black tracking-tighter leading-[0.92] mb-5
-                       text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
+            className={`font-headline font-black mb-5 text-4xl sm:text-6xl md:text-7xl lg:text-8xl ${locale === "ur" ? "leading-[3.4] tracking-normal" : "leading-[0.92] tracking-tighter"}`}
           >
-            <span className="adaptive-text block font-semibold text-2xl sm:text-3xl md:text-4xl tracking-normal mb-2 opacity-80">
+            <span className={`adaptive-text block font-semibold text-2xl sm:text-3xl md:text-4xl tracking-normal opacity-80 ${locale === "ur" ? "mb-8" : "mb-2"}`}>
               {t.hero.intro}
             </span>
-            <span className={`block text-transparent bg-clip-text bg-gradient-to-r from-primary-dim via-secondary to-primary ${locale === "ur" ? "text-3xl sm:text-4xl md:text-5xl lg:text-6xl" : ""}`}>
+            <span className={`block text-transparent bg-clip-text bg-gradient-to-r from-primary-dim via-secondary to-primary ${
+              locale === "ur" ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl pb-8" :
+              locale === "de" ? "text-3xl sm:text-5xl md:text-6xl lg:text-7xl" :
+              "text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+            }`}>
               {t.hero.line1}
             </span>
             <span className="adaptive-text block">
-              <span className={`text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary ${locale === "ur" ? "text-3xl sm:text-4xl md:text-5xl lg:text-6xl" : ""}`}>
+              <span className={`text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary ${
+                locale === "ur" ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl pb-8 block" :
+                locale === "de" ? "text-3xl sm:text-5xl md:text-6xl lg:text-7xl" :
+                "text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+              }`}>
                 {t.hero.line2}
               </span>
             </span>
@@ -124,7 +131,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.35 }}
-            className="h-7 overflow-hidden mb-6"
+            className={`overflow-hidden mb-6 ${locale === "ur" ? "h-14" : "h-7"}`}
           >
             <motion.p
               key={roleIdx}
@@ -132,7 +139,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.35 }}
-              className="font-label text-base sm:text-lg text-secondary tracking-[0.25em] uppercase"
+              className={`font-label text-base sm:text-lg text-secondary ${locale === "ur" ? "tracking-normal" : "tracking-[0.25em] uppercase"}`}
             >
               {roles[roleIdx]}
               <span className="cursor-blink text-primary ml-1">_</span>

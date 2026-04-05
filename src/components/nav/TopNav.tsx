@@ -17,7 +17,9 @@ export default function TopNav() {
   const [mounted, setMounted]       = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen]     = useState(false);
+  const [cvOpen, setCvOpen]         = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
+  const cvRef   = useRef<HTMLDivElement>(null);
 
   const { theme, setTheme } = useTheme();
   const { locale, setLocale, t }    = useLang();
@@ -34,6 +36,7 @@ export default function TopNav() {
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false);
+      if (cvRef.current && !cvRef.current.contains(e.target as Node)) setCvOpen(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
@@ -205,20 +208,68 @@ export default function TopNav() {
               </button>
             )}
 
-            {/* Download CV — hidden on mobile */}
-            <a
-              href="/cv.pdf"
-              target="_blank"
-              className="hidden md:flex items-center gap-1.5
-                         border border-black/12 dark:border-white/12
-                         text-on-surface-variant dark:text-on-surface-variant light:text-neutral-600
-                         hover:text-primary hover:border-primary-dim/40
-                         px-3 py-1.5 rounded-lg font-label text-[11px] uppercase tracking-wider
-                         transition-all hover:bg-primary-dim/6 dark:hover:bg-white/5"
-            >
-              <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>download</span>
-              {t.nav.downloadCV}
-            </a>
+            {/* Download CV — split button with EN/DE picker */}
+            <div className="relative hidden md:flex" ref={cvRef}>
+              <a
+                href={locale === "de" ? "/cv-de.pdf" : "/cv.pdf"}
+                target="_blank"
+                className="flex items-center gap-1.5
+                           border border-black/12 dark:border-white/12 border-r-0
+                           text-on-surface-variant dark:text-on-surface-variant light:text-neutral-600
+                           hover:text-primary hover:border-primary-dim/40
+                           px-3 py-1.5 rounded-l-lg font-label text-[11px] uppercase tracking-wider
+                           transition-all hover:bg-primary-dim/6 dark:hover:bg-white/5"
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>download</span>
+                {t.nav.downloadCV}
+              </a>
+              <button
+                onClick={() => setCvOpen((o) => !o)}
+                className="flex items-center px-1.5 py-1.5
+                           border border-black/12 dark:border-white/12
+                           text-on-surface-variant hover:text-primary
+                           rounded-r-lg transition-all hover:bg-primary-dim/6 dark:hover:bg-white/5"
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>expand_more</span>
+              </button>
+
+              <AnimatePresence>
+                {cvOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -6, scale: 0.96 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute right-0 top-full mt-2 w-40 rounded-xl overflow-hidden z-50
+                               shadow-[0_8px_30px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
+                    style={{
+                      background: mounted && !isDark ? "rgba(255,255,255,0.98)" : "rgba(20,20,20,0.97)",
+                      border: mounted && !isDark ? "1px solid rgba(0,0,0,0.08)" : "1px solid rgba(255,255,255,0.08)",
+                      backdropFilter: "blur(20px)",
+                    }}
+                  >
+                    {[
+                      { label: "English CV", flag: "🇬🇧", href: "/cv.pdf" },
+                      { label: "Deutsch CV", flag: "🇩🇪", href: "/cv-de.pdf" },
+                    ].map((cv) => (
+                      <a
+                        key={cv.href}
+                        href={cv.href}
+                        target="_blank"
+                        onClick={() => setCvOpen(false)}
+                        className="flex items-center gap-3 px-4 py-2.5 w-full
+                                   font-label text-xs uppercase tracking-widest
+                                   text-on-surface-variant dark:text-on-surface-variant light:text-neutral-600
+                                   hover:text-primary hover:bg-primary-dim/8 dark:hover:bg-white/5 transition-colors"
+                      >
+                        <span className="text-base">{cv.flag}</span>
+                        <span>{cv.label}</span>
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* Hire Me CTA */}
             <a
@@ -269,14 +320,24 @@ export default function TopNav() {
                   </a>
                 ))}
                 <a
-                  href="/cv.pdf"
+                  href={locale === "de" ? "/cv-de.pdf" : "/cv.pdf"}
                   target="_blank"
                   className="font-label text-sm uppercase tracking-wider px-3 py-2.5 rounded-lg
                              text-on-surface-variant hover:text-primary hover:bg-primary-dim/8 transition-all
                              flex items-center gap-2 mt-1"
                 >
                   <span className="material-symbols-outlined" style={{ fontSize: "15px" }}>download</span>
-                  {t.nav.downloadCV}
+                  🇬🇧 {t.nav.downloadCV}
+                </a>
+                <a
+                  href="/cv-de.pdf"
+                  target="_blank"
+                  className="font-label text-sm uppercase tracking-wider px-3 py-2.5 rounded-lg
+                             text-on-surface-variant hover:text-primary hover:bg-primary-dim/8 transition-all
+                             flex items-center gap-2"
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: "15px" }}>download</span>
+                  🇩🇪 Deutsch CV
                 </a>
               </div>
             </motion.div>

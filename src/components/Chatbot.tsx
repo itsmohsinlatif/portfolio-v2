@@ -106,7 +106,7 @@ function renderText(text: string) {
       <span key={i} className="block">
         {parts.map((part, j) =>
           part.startsWith("**") && part.endsWith("**") ? (
-            <strong key={j} className="font-semibold dark:text-white text-neutral-900">
+            <strong key={j} className="font-semibold adaptive-text">
               {part.slice(2, -2)}
             </strong>
           ) : (
@@ -213,7 +213,7 @@ export default function Chatbot() {
                       msg.role === "user" ? "chat-bubble-user" : "chat-bubble-bot"
                     }`}
                   >
-                    <span className="text-on-surface-variant dark:text-on-surface-variant light:text-neutral-500 text-xs font-label leading-loose">
+                    <span className="adaptive-text-muted text-xs font-label leading-loose">
                       {renderText(msg.text)}
                     </span>
                   </div>

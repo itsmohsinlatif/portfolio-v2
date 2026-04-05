@@ -7,7 +7,7 @@ import { useLang } from "@/context/LanguageContext";
 const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
 
 export default function Contact() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -60,9 +60,9 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-headline font-black tracking-tighter mb-4">
+          <h2 className={`text-4xl sm:text-5xl font-headline font-black mb-4 ${locale === "ur" ? "tracking-normal leading-[2]" : "tracking-tighter"}`}>
             <span className="adaptive-text">{t.sections.contact.heading.split(" ").slice(0, -1).join(" ")} </span>
-            <span className="text-gradient-primary">{t.sections.contact.heading.split(" ").at(-1)}</span>
+            <span className={`text-gradient-primary ${locale === "ur" ? "py-2 px-2 inline-block" : ""}`}>{t.sections.contact.heading.split(" ").at(-1)}</span>
           </h2>
           <p className="text-on-surface-variant font-label uppercase tracking-widest text-xs">
             {t.sections.contact.availability}
