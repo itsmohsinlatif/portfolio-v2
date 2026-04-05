@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const BASE_URL = "https://www.mohsinlatif.com";
 
@@ -137,6 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased">
         <Analytics />
+        <SpeedInsights />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <LanguageProvider>
             {children}
