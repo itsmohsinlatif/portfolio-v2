@@ -320,7 +320,7 @@ export default function TopNav() {
                   </a>
                 ))}
                 <a
-                  href={locale === "de" ? "/cv-de.pdf" : "/cv.pdf"}
+                  href="/cv.pdf"
                   target="_blank"
                   className="font-label text-sm uppercase tracking-wider px-3 py-2.5 rounded-lg
                              text-on-surface-variant hover:text-primary hover:bg-primary-dim/8 transition-all
