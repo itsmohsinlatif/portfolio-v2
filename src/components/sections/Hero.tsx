@@ -27,14 +27,14 @@ export default function Hero() {
     <section dir="ltr" className="min-h-screen relative overflow-hidden flex flex-col justify-center">
 
       {/* ── Background glows ── */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 -left-32 w-[400px] h-[400px] bg-primary-dim rounded-full blur-[140px] opacity-20 dark:opacity-20 light:opacity-10" />
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-secondary rounded-full blur-[160px] opacity-10 dark:opacity-10 light:opacity-5" />
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/4 -left-16 sm:-left-32 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-primary-dim rounded-full blur-[100px] sm:blur-[140px] opacity-15 dark:opacity-20" />
+        <div className="absolute top-0 right-0 sm:right-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-secondary rounded-full blur-[120px] sm:blur-[160px] opacity-8 dark:opacity-10" />
       </div>
 
       {/* ── Subtle grid ── */}
       <div
-        className="absolute inset-0 z-0 dark:opacity-[0.025] light:opacity-[0.04]"
+        className="absolute inset-0 z-0 opacity-[0.025] hidden sm:block"
         style={{
           backgroundImage: `
             linear-gradient(rgba(0,112,235,0.6) 1px, transparent 1px),
@@ -76,7 +76,7 @@ export default function Hero() {
       </motion.div>
 
       {/* ── TEXT CONTENT ── */}
-      <div className={`relative z-10 px-5 sm:px-8 lg:px-32 py-28 w-full max-w-[100%] ${locale === "ur" ? "sm:pr-[52%] lg:pr-[50%]" : ""}`}>
+      <div className={`relative z-10 px-5 sm:px-8 lg:px-32 pt-24 pb-12 sm:py-28 w-full max-w-[100%] ${locale === "ur" ? "sm:pr-[52%] lg:pr-[50%]" : ""}`}>
         <div dir={locale === "ur" ? "rtl" : "ltr"} className="max-w-xl lg:max-w-2xl">
 
           {/* Status row */}
@@ -202,7 +202,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-14 grid grid-cols-2 sm:flex sm:flex-wrap gap-x-8 gap-y-5"
+            className="mt-8 sm:mt-14 grid grid-cols-2 sm:flex sm:flex-wrap gap-x-8 gap-y-4 sm:gap-y-5"
           >
             {t.stats.map((stat: { value: string; label: string }) => (
               <div key={stat.label} className="flex flex-col">

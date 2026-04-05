@@ -11,7 +11,7 @@ import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "var(--bg)", color: "var(--fg)" }}>
+    <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: "var(--bg)", color: "var(--fg)" }}>
       <TopNav />
       <main>
         <Hero />
