@@ -77,9 +77,24 @@ export default function TopNav() {
             transition={{ duration: 0.4 }}
             className="flex items-center gap-3 flex-shrink-0 group"
           >
-            {/* Monogram badge */}
+            {/* Logo badge — neural network glyph */}
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-dim to-secondary flex items-center justify-center shadow-[0_0_14px_rgba(0,112,235,0.35)] flex-shrink-0">
-              <span className="font-black text-white text-sm font-headline leading-none">ML</span>
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[22px] h-[22px]">
+                {/* Outer triangle nodes */}
+                <circle cx="16" cy="4"  r="2.8" fill="white"/>
+                <circle cx="5"  cy="24" r="2.8" fill="white"/>
+                <circle cx="27" cy="24" r="2.8" fill="white"/>
+                {/* Center hub */}
+                <circle cx="16" cy="17" r="2" fill="white" fillOpacity="0.75"/>
+                {/* Spokes: outer → hub */}
+                <line x1="16" y1="6.8"  x2="16" y2="15"   stroke="white" strokeWidth="1.4" strokeOpacity="0.7"/>
+                <line x1="7.4" y1="22.4" x2="14.2" y2="18.6" stroke="white" strokeWidth="1.4" strokeOpacity="0.7"/>
+                <line x1="24.6" y1="22.4" x2="17.8" y2="18.6" stroke="white" strokeWidth="1.4" strokeOpacity="0.7"/>
+                {/* Triangle outline (subtle) */}
+                <line x1="16" y1="6.8"  x2="7.4"  y2="22.4" stroke="white" strokeWidth="0.8" strokeOpacity="0.22"/>
+                <line x1="16" y1="6.8"  x2="24.6" y2="22.4" stroke="white" strokeWidth="0.8" strokeOpacity="0.22"/>
+                <line x1="7.4" y1="24"  x2="24.6" y2="24"   stroke="white" strokeWidth="0.8" strokeOpacity="0.22"/>
+              </svg>
             </div>
             {/* Name — hidden on very small screens */}
             <div className="hidden sm:flex flex-col leading-tight">

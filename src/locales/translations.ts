@@ -39,7 +39,7 @@ export const translations = {
     // Chatbot
     chatbot: { title: "Mohsin's Assistant", online: "Online", placeholder: "Ask anything..." },
     // Footer
-    footer: { copy: "© 2025 Mohsin Latif · All Systems Operational" },
+    footer: { copy: "© 2026 Mohsin Latif · All Systems Operational" },
   },
 
   de: {
@@ -72,7 +72,7 @@ export const translations = {
     active: "Aktiv", ongoing: "Laufend",
     deployed: "Deployed",
     chatbot: { title: "Mohsins Assistent", online: "Online", placeholder: "Fragen Sie alles..." },
-    footer: { copy: "© 2025 Mohsin Latif · Alle Systeme betriebsbereit" },
+    footer: { copy: "© 2026 Mohsin Latif · Alle Systeme betriebsbereit" },
   },
 
   ur: {
@@ -105,7 +105,7 @@ export const translations = {
     active: "فعال", ongoing: "جاری",
     deployed: "تعینات",
     chatbot: { title: "محسن کا معاون", online: "آن لائن", placeholder: "کچھ بھی پوچھیں..." },
-    footer: { copy: "© 2025 محسن لطیف · تمام سسٹم فعال ہیں" },
+    footer: { copy: "© 2026 محسن لطیف · تمام سسٹم فعال ہیں" },
   },
 };
 
