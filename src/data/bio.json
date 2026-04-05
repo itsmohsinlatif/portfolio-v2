@@ -1,0 +1,199 @@
+{
+  "name": "Mohsin Latif",
+  "title": "AI Engineer · Data Scientist",
+  "tagline": "Turning Data into actionable Insights",
+  "location": "Berlin, Germany",
+  "email": "itsmohsinlatif@gmail.com",
+  "website": "https://www.mohsinlatif.com",
+  "linkedin": "https://www.linkedin.com/in/itsmohsinlatif/",
+  "github": "https://github.com/itsmohsinlatif",
+  "twitter": "https://twitter.com/itsmohsinlatif",
+  "summary": "Microsoft Certified AI & Data Analyst currently working at BSH Berlin on the Shopfloor Analyzer project. Skilled in Python, SQL, and analyzing IFP logs. Dedicated to bridging the gap between raw industrial data and strategic decision-making through advanced analytics and visualization.",
+  "availability": "Open for High-Impact Projects",
+  "skills": {
+    "Tools": ["Microsoft Azure", "Neo4j", "Power BI", "Grafana", "Power Automate", "Power Apps", "Elastic", "Git", "Data Fabric", "Linux", "Jira", "Microsoft 365", "Docker"],
+    "Generative & Agentic AI": ["Azure AI Foundry", "Claude Code", "n8n", "Gemini Enterprise", "LangGraph", "DeepSeek", "RAG", "Copilot", "Azure Cognitive Services", "Grok", "Anthropic"],
+    "Data Analysis": ["Pandas", "Numpy", "Matplotlib", "Seaborn", "scikit-learn", "TensorFlow"],
+    "Programming": ["Python", "R", "SQL", "DAX", "Java", "Cypher"]
+  },
+  "experience": [
+    {
+      "company": "BSH Hausgeräte GmbH",
+      "location": "Berlin, Germany",
+      "role": "Data Analyst Working Student",
+      "period": "June 2025 – Present",
+      "current": true,
+      "bullets": [
+        "Contributing in 'Shopfloor Analyzer' project within the BED team by integrating and analyzing In-Factory Programming (IFP) appliance logs to uncover production trends.",
+        "Building interactive dashboards for Global and Local Process Owners (GPOs/LPOs) to visualize log data, significantly minimizing failure resolution time and optimizing workflows.",
+        "Designed and developed proprietary Agentic AI models enabling real-time, AI-assisted diagnostics for production line issues.",
+        "Partnering with cross-functional teams (Engineering, Operations, AI) to deploy scalable Industry 4.0 solutions."
+      ]
+    },
+    {
+      "company": "OptimusFox Ltd.",
+      "location": "Lahore, Pakistan",
+      "role": "AI Engineer",
+      "period": "Mar. 2022 – Mar. 2024",
+      "current": false,
+      "bullets": [
+        "Spearheaded Data Fabric integration, replacing Azure Analysis Service to achieve a 30% cost reduction and eliminate data redundancy.",
+        "Led a team of 4 to develop a Denials Appeal module using ChatGPT, boosting operational efficiency.",
+        "Implemented the RAG technique to train multiple GPT-based bots, enhancing decision-making from medicaid/medicare policies knowledge base.",
+        "Managed and configured Azure services (Azure OpenAI, AI Services, Cognitive Search) for optimal performance.",
+        "Orchestrated data migration from Jira to Microsoft DevOps, achieving a 40% cost savings."
+      ]
+    },
+    {
+      "company": "Fiverr",
+      "location": "Remote",
+      "role": "Data Science Freelancer",
+      "period": "Aug. 2020 – Oct. 2023",
+      "current": false,
+      "bullets": [
+        "Delivered comprehensive services in Data Science, Machine Learning, Graph Databases, and Microsoft Azure technologies.",
+        "Developed ChatGPT chatbots using GPT-3.5 Turbo and GPT-4 models.",
+        "Trained and deployed ML models to predict outcomes of SQA tests within DevOps Pipelines.",
+        "Converted SBML medical data into Neo4j Graph Database."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "AI Compliance System for United Tires",
+      "role": "AI Engineer",
+      "date": "Mar. 2024",
+      "description": "Designed compliance recommendation system using advanced retrieval techniques (RAG) to process 50k+ tire policies across U.S. states, achieving 95% accuracy in regulatory compliance suggestions.",
+      "tags": ["RAG", "Python", "LLM", "Compliance"],
+      "highlight": "95% accuracy · 50k+ policies"
+    },
+    {
+      "title": "Torrk.ai – Automated Company Profiling",
+      "role": "Developer",
+      "date": "Feb. 2024",
+      "description": "Developed AI-powered solution using DeepSeek and Llama models with PostgreSQL integration to automate company profile generation, reducing manual effort by 70% in data aggregation and content creation.",
+      "tags": ["DeepSeek", "Llama", "PostgreSQL", "Automation"],
+      "highlight": "70% manual effort reduction"
+    },
+    {
+      "title": "Edulga – Educational Data Analysis",
+      "role": "Data Science Engineer",
+      "date": "Jan. 2024",
+      "description": "Performed data analysis and implemented Graph RAG (Retrieval-Augmented Generation) using graph databases and OpenAI models to enhance learning experiences through personalized educational recommendations.",
+      "tags": ["Graph RAG", "Neo4j", "OpenAI", "Education"],
+      "highlight": "Personalized AI recommendations"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Microsoft Certified: Azure Data Scientist Associate (DP-100)",
+      "issuer": "Microsoft",
+      "year": "2024",
+      "icon": "science",
+      "image": "/certs/Microsoft_Azure_Data_Scientist_Associate.webp"
+    },
+    {
+      "name": "Microsoft Certified: Azure AI Engineer Associate (AI-102)",
+      "issuer": "Microsoft",
+      "year": "2023",
+      "icon": "psychology",
+      "image": "/certs/Microsoft_AI_Associate_Engineer_Certificate-1.webp"
+    },
+    {
+      "name": "Microsoft Certified: Azure AI Fundamentals (AI-900)",
+      "issuer": "Microsoft",
+      "year": "2023",
+      "icon": "lightbulb",
+      "image": "/certs/Microsoft_AI_Fundamental_Certificate-1.webp"
+    },
+    {
+      "name": "Databricks Lakehouse Fundamentals",
+      "issuer": "Databricks Academy",
+      "year": "2023",
+      "icon": "storage",
+      "image": "/certs/Databricks_Lakehouse-Fundamentals_Certificate-1.webp"
+    },
+    {
+      "name": "Power BI Certificate",
+      "issuer": "Xperiun Power BI Express Program",
+      "year": "2022",
+      "icon": "bar_chart",
+      "image": "/certs/PowerbiExperience_Course_Certificate-1.webp"
+    },
+    {
+      "name": "Google Data Analytics Professional Certificate",
+      "issuer": "Google / Coursera",
+      "year": "2022",
+      "icon": "analytics",
+      "image": "/certs/Google_Data_Analytics-1.webp"
+    },
+    {
+      "name": "AWS Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "year": "2022",
+      "icon": "cloud",
+      "image": "/certs/AWS_Certificate-1.webp"
+    },
+    {
+      "name": "AI/ML/DS Vocational Training",
+      "issuer": "NAVTTC, Govt. of Pakistan",
+      "year": "2021",
+      "icon": "school",
+      "image": "/certs/Kamyab_Jawan_ML_DL_Certificate-1.webp"
+    },
+    {
+      "name": "Microsoft Virtual Experience Program",
+      "issuer": "Microsoft",
+      "year": "2021",
+      "icon": "work",
+      "image": "/certs/Microsoft_Virtual_Experience_Program_Certificate-1.webp"
+    },
+    {
+      "name": "Toyota 5S Methodology",
+      "issuer": "UN / UNDP",
+      "year": "2021",
+      "icon": "factory",
+      "image": "/certs/UN_Toyota_5S_Methodology-Certificate-1.webp"
+    },
+    {
+      "name": "Coursera Certificate",
+      "issuer": "Coursera",
+      "year": "2021",
+      "icon": "verified",
+      "image": "/certs/Coursera 3HYD3G2BR5PK.webp"
+    }
+  ],
+  "awards": [
+    {
+      "title": "City & Provincial Level Winner",
+      "org": "National Idea Bank Competition",
+      "year": "2021",
+      "location": "Punjab, Pakistan",
+      "image": "/awards/NIB_Province_Level_Certificate.webp"
+    },
+    {
+      "title": "Appreciation Award",
+      "org": "ACM (Association of Computing Machinery)",
+      "year": "2020",
+      "location": "Lahore, Pakistan",
+      "image": "/awards/ACM_Workshop_Volunteer_Certificate-1.webp"
+    }
+  ],
+  "education": [
+    {
+      "institution": "BTU (Brandenburg University of Technology)",
+      "location": "Cottbus, Germany",
+      "degree": "M.Sc. in Artificial Intelligence",
+      "period": "Apr. 2024 – Present",
+      "current": true
+    },
+    {
+      "institution": "CUI (Comsats University Islamabad)",
+      "location": "Lahore, Pakistan",
+      "degree": "B.Sc. in Computer Science",
+      "period": "Feb. 2018 – Mar. 2022",
+      "current": false,
+      "note": "Specialization in Artificial Intelligence/Data Science"
+    }
+  ]
+}

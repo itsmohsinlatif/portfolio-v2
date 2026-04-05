@@ -1,26 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* --- Dark palette (default) --- */
+  --color-primary-dim: #0070eb;
+  --color-primary: #85adff;
+  --color-primary-fixed: #6c9fff;
+  --color-primary-fixed-dim: #5191ff;
+  --color-on-primary: #002c65;
+  --color-on-primary-fixed: #000000;
+  --color-secondary: #00d2fd;
+  --color-secondary-dim: #00c3eb;
+  --color-tertiary: #fab0ff;
+  --color-tertiary-dim: #e48fec;
+  --color-surface: #0e0e0e;
+  --color-surface-dim: #0e0e0e;
+  --color-surface-bright: #2c2c2c;
+  --color-surface-variant: #262626;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #131313;
+  --color-surface-container: #1a1a1a;
+  --color-surface-container-high: #20201f;
+  --color-surface-container-highest: #262626;
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #adaaaa;
+  --color-outline: #767575;
+  --color-outline-variant: #484847;
+  --color-background: #0e0e0e;
+  --color-on-background: #ffffff;
+  --color-error: #ff716c;
+  --color-surface-tint: #85adff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-headline: Inter, sans-serif;
+  --font-body: Inter, sans-serif;
+  --font-label: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
   }
 }
 
+/* ─── Dark theme (default) ─────────────────────────────── */
+:root,
+.dark {
+  --bg:              #0e0e0e;
+  --fg:              #ffffff;
+  --fg-muted:        #adaaaa;
+  --surface-card:    rgba(38, 38, 38, 0.4);
+  --surface-nav:     rgba(10, 10, 10, 0.85);
+  --border-glass:    rgba(72, 72, 71, 0.15);
+  --scrollbar-track: #0e0e0e;
+  --scrollbar-thumb: #262626;
+  --input-bg:        #20201f;
+  --input-border:    rgba(255,255,255,0.05);
+  --section-alt:     #131313;
+}
+
+/* ─── Light theme ───────────────────────────────────────── */
+.light {
+  --bg:              #f0f4ff;
+  --fg:              #0d1117;
+  --fg-muted:        #4b5563;
+  --surface-card:    rgba(255, 255, 255, 0.75);
+  --surface-nav:     rgba(240, 244, 255, 0.92);
+  --border-glass:    rgba(0, 112, 235, 0.1);
+  --scrollbar-track: #e8edf5;
+  --scrollbar-thumb: #c5d0e6;
+  --input-bg:        #e8edf5;
+  --input-border:    rgba(0, 112, 235, 0.15);
+  --section-alt:     #e8edf5;
+
+  /* Override design tokens for light mode */
+  --color-background:               #f0f4ff;
+  --color-on-background:            #0d1117;
+  --color-surface:                  #f0f4ff;
+  --color-surface-container-low:    #e8edf5;
+  --color-surface-container:        #dde4f0;
+  --color-surface-container-high:   #ffffff;
+  --color-surface-container-highest:#ffffff;
+  --color-surface-bright:           #ffffff;
+  --color-surface-variant:          #dde4f0;
+  --color-on-surface:               #0d1117;
+  --color-on-surface-variant:       #4b5563;
+  --color-outline-variant:          #c5d0e6;
+}
+
+/* ─── Global light-mode text fix ─────────────────────────
+   Any bare text-white that sits on the page background
+   (not inside gradient/coloured buttons) must turn dark. ─ */
+.light h1, .light h2, .light h3, .light h4, .light h5 {
+  color: var(--fg);
+}
+.light p:not([class*="text-"]) {
+  color: var(--fg-muted);
+}
+/* Adaptive helper class – use on any span/div that needs
+   to invert automatically */
+.adaptive-text { color: var(--fg); }
+.adaptive-text-muted { color: var(--fg-muted); }
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 10px; }
+
+/* ─── Glass panel ───────────────────────────────────────── */
+.glass-panel {
+  background: var(--surface-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+}
+
+/* Light mode glass override */
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 112, 235, 0.12);
+  box-shadow: 0 2px 20px rgba(0, 112, 235, 0.06);
+}
+
+.glass-panel-solid {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(72, 72, 71, 0.15);
+}
+
+.light .glass-panel-solid {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(0, 112, 235, 0.1);
+}
+
+/* ─── Glows ─────────────────────────────────────────────── */
+.glow-primary   { box-shadow: 0 0 30px rgba(0, 112, 235, 0.15); }
+.glow-secondary { box-shadow: 0 0 30px rgba(0, 210, 253, 0.15); }
+
+/* Light mode: softer glows */
+.light .glow-primary   { box-shadow: 0 4px 24px rgba(0, 112, 235, 0.12); }
+.light .glow-secondary { box-shadow: 0 4px 24px rgba(0, 210, 253, 0.10); }
+
+/* ─── Gradient text ─────────────────────────────────────── */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #0070eb, #00d2fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Section alt bg ────────────────────────────────────── */
+.section-alt { background-color: var(--section-alt); }
+
+/* ─── Selection ─────────────────────────────────────────── */
+::selection { background-color: #0070eb; color: #ffffff; }
+
+/* ─── Hero mask ─────────────────────────────────────────── */
+.hero-avatar-mask {
+  mask-image: linear-gradient(to right, transparent 0%, black 50%, black 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 50%, black 100%);
+}
+@media (max-width: 768px) {
+  .hero-avatar-mask {
+    mask-image: linear-gradient(to top, transparent 0%, black 50%, black 100%);
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%, black 100%);
+  }
+}
+
+/* ─── Animations ────────────────────────────────────────── */
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+.cursor-blink       { animation: blink 1s step-end infinite; }
+
+/* ─── Ticker / Marquee ───────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover { animation-play-state: paused; }
+
+/* ─── Form inputs ───────────────────────────────────────── */
+.form-input {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--fg);
+}
+.form-input::placeholder { color: var(--fg-muted); opacity: 0.5; }
+.form-input:focus {
+  outline: none;
+  border-color: rgba(0, 210, 253, 0.5);
+  background: var(--input-bg);
+}
+
+/* ─── Chatbot ────────────────────────────────────────────── */
+.chat-bubble-user {
+  background: linear-gradient(135deg, #0070eb, #00b4d8);
+  color: #fff;
+  border-radius: 18px 18px 4px 18px;
+}
+.dark .chat-bubble-bot {
+  background: rgba(38, 38, 38, 0.8);
+  color: #fff;
+  border-radius: 18px 18px 18px 4px;
+  border: 1px solid rgba(133, 173, 255, 0.15);
+}
+.light .chat-bubble-bot {
+  background: rgba(255, 255, 255, 0.95);
+  color: #0d1117;
+  border-radius: 18px 18px 18px 4px;
+  border: 1px solid rgba(0, 112, 235, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }

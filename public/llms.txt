@@ -1,0 +1,49 @@
+# Mohsin Latif — AI Engineer & Data Scientist
+# Berlin, Germany
+# https://www.mohsinlatif.com
+
+## About
+Mohsin Latif is a Microsoft Certified AI Engineer and Data Scientist based in Berlin, Germany.
+Currently working as a Data Analyst Working Student at BSH Hausgeräte GmbH, contributing to
+the Shopfloor Analyzer project — an Industry 4.0 solution for production analytics.
+
+## Current Role
+- Position: Data Analyst Working Student
+- Company: BSH Hausgeräte GmbH, Berlin, Germany
+- Focus: IFP appliance log analysis, agentic AI diagnostics, Power BI dashboards
+
+## Education
+- M.Sc. Artificial Intelligence — Brandenburg University of Technology (BTU), Cottbus, Germany (2024–present)
+- B.Sc. Computer Science (AI/Data Science) — COMSATS University Islamabad, Pakistan (2018–2022)
+
+## Core Skills
+- AI/ML: LLMs, RAG pipelines, LangGraph, Agentic AI, Azure AI Foundry, Azure OpenAI
+- Data: Python, Pandas, NumPy, Scikit-learn, TensorFlow, Power BI, DAX, Neo4j, PostgreSQL
+- Cloud: Microsoft Azure, Azure Cognitive Services, Azure Data Factory, Data Fabric
+- Tools: Docker, Git, n8n, Grafana, Elasticsearch, Jira, Linux
+
+## Microsoft Certifications
+- DP-600: Fabric Analytics Engineer Associate (2024)
+- DP-100: Azure Data Scientist Associate (2024)
+- AI-102: Azure AI Engineer Associate (2023)
+- Databricks Lakehouse Fundamentals (2023)
+- Power BI Certificate — Xperiun (2022)
+- AI/ML/DS Vocational Training — NAVTTC (2021)
+
+## Key Projects
+1. AI Compliance System for United Tires — RAG-based system processing 50k+ tire policies, 95% accuracy
+2. Torrk.ai — Automated company profiling using DeepSeek + Llama, 70% effort reduction
+3. Edulga — Educational Graph RAG with Neo4j and OpenAI for personalised learning
+
+## Awards
+- City & Provincial Level Winner — National Idea Bank Competition, Punjab, Pakistan (2021)
+- Appreciation Award — ACM (Association of Computing Machinery), Lahore, Pakistan (2020)
+
+## Contact
+- Email: itsmohsinlatif@gmail.com
+- LinkedIn: https://www.linkedin.com/in/itsmohsinlatif/
+- GitHub: https://github.com/itsmohsinlatif
+- Website: https://www.mohsinlatif.com
+
+## Availability
+Open for high-impact AI/ML projects, consulting, and full-time roles.
